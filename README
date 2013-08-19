@@ -18,9 +18,9 @@ sudo apt-get install ccache g++ swig python-dev libgsl0-dev libboost-dev libboos
 cd programs/clop/compgcc
 make
 cd programs/clop/compqt/clop-console
-qmake && make
+qmake-qt4 && make
 cd programs/clop/compqt/clop-gui
-qmake && make
+qmake-qt4 && make
 
 Windows & Mac
 -------------
