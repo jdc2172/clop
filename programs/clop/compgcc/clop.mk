@@ -2,7 +2,8 @@ INCLUDES := $(INCLUDES)\
  -I../../clop/src\
  -I../../clop/src/real\
  -I../../clop/src/artificial\
- -I../../clop/src/math
+ -I../../clop/src/math\
+ -I/usr/include/python3.3m
 
 vpath %cpp ../../clop/src
 vpath %cpp ../../clop/src/real
@@ -17,7 +18,7 @@ include $(DEPEND)
 ifeq ($(OSTYPE),cygwin)
  LDFLAGS := $(LDFLAGS) -lboost_thread-gcc-mt -lboost_filesystem-gcc-mt
 else
- LDFLAGS := $(LDFLAGS) -lboost_thread-mt -lboost_filesystem-mt
+ LDFLAGS := $(LDFLAGS) -lboost_thread -lboost_filesystem -lboost_system
 endif
 
 OBJECTS := $(OBJECTS) $(patsubst %.o, $(OUTDIR)/%.o,\
